@@ -1,10 +1,11 @@
+
 package javaOne;
 
 import java.util.*;
 
 
 
-public class java_one {
+public class java_two {
 	
 	public static int intDegerAlanaKadarGirdiAlma(Scanner okuyucu)
 	{
@@ -35,16 +36,17 @@ public class java_one {
 
 	public static void main(String[] args) {
 
-		
 		Scanner okuyucu = new Scanner(System.in);
-		System.out.println("lutfen notlarini gireceginiz ders sayisini giriniz : ");
+		System.out.println("lutfen hitap edebilmemiz icin isminizi giriniz");
+		String isim = okuyucu.nextLine();
+		System.out.printf("%s ,lutfen notlarini gireceginiz ders sayisini giriniz : \n",isim);
 		int dersSayisi = intDegerAlanaKadarGirdiAlma(okuyucu);
 		
 		int[] notlar = new int[dersSayisi];
 		
 		for(int i = 0 ; i < dersSayisi ; i++)
 		{
-			System.out.printf("%d. notu giriniz = \n",i+1);
+			System.out.printf("%s ,%d. notu giriniz = \n",isim,i+1);
 			while(true)
 			{
 				notlar[i] = intDegerAlanaKadarGirdiAlma(okuyucu);
@@ -52,11 +54,11 @@ public class java_one {
 				if(notlar[i] <= 100 && notlar[i] >= 0)
 					break;
 				else
-					System.out.println("lutfen gecerli bir not degeri giriniz (0 ila 100 arasında) = ");
+					System.out.printf("%s ,lutfen gecerli bir not degeri giriniz (0 ila 100 arasında) = ",isim);
 			}
 		}
 		
-		System.out.printf("girilen notlarin ortalamasi = %.2f\n",ortalamaHesaplama(notlar));
+		System.out.printf("%s ,girilen notlarin ortalamasi = %.2f\n",isim,ortalamaHesaplama(notlar));
 		
 		okuyucu.close();
 		
