@@ -23,13 +23,13 @@ public class java_two {
 		return sayi;
 	}
 	
-	public static double ortalamaHesaplama(int[] dizi)
+	public static double ortalamaHesaplama(ogrenci[] dizi)
 	{
 		double toplam = 0;
 		
 		for(int i = 0 ; i < dizi.length ; i++)
 		{
-			toplam += dizi[i];
+			toplam += dizi[i].not;
 		}
 		return toplam / dizi.length;
 	}
@@ -39,20 +39,28 @@ public class java_two {
 		Scanner okuyucu = new Scanner(System.in);
 		System.out.println("lutfen hitap edebilmemiz icin isminizi giriniz");
 		String isim = okuyucu.nextLine();
+		System.out.println("kullanici ismi basariyla girildi!!!");
 		System.out.printf("%s ,lutfen notlarini gireceginiz ders sayisini giriniz : \n",isim);
 		int dersSayisi = intDegerAlanaKadarGirdiAlma(okuyucu);
 		
-		int[] notlar = new int[dersSayisi];
+		ogrenci[] notlar = new ogrenci[dersSayisi];
 		
 		for(int i = 0 ; i < dersSayisi ; i++)
 		{
-			System.out.printf("%s ,%d. notu giriniz = \n",isim,i+1);
+			ogrenci ogrencio = new ogrenci();
+			System.out.printf("%s ,lutfen notunu gireceginiz ogrencinin ismini giriniz = \n",isim);
+			ogrencio.isim = okuyucu.nextLine();
+			System.out.println("isim ekleme islemi basarili!!");
+			System.out.printf("%s ,%s. isimli ogrencinin notunu giriniz = \n",isim,ogrencio.isim);
 			while(true)
 			{
-				notlar[i] = intDegerAlanaKadarGirdiAlma(okuyucu);
+				ogrencio.not = intDegerAlanaKadarGirdiAlma(okuyucu);
 				
-				if(notlar[i] <= 100 && notlar[i] >= 0)
+				if(ogrencio.not <= 100 && ogrencio.not >= 0)
+				{
+					System.out.println("not girisi basarili!!!");
 					break;
+				}
 				else
 					System.out.printf("%s ,lutfen gecerli bir not degeri giriniz (0 ila 100 arasında) = ",isim);
 			}
