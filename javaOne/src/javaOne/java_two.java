@@ -64,6 +64,7 @@ public class java_two {
 				else
 					System.out.printf("%s ,lutfen gecerli bir not degeri giriniz (0 ila 100 arasında) = ",isim);
 			}
+			notlar[i] = ogrencio;
 		}
 		
 		System.out.printf("%s ,girilen notlarin ortalamasi = %.2f\n",isim,ortalamaHesaplama(notlar));
