@@ -33,6 +33,21 @@ public class java_two {
 		}
 		return toplam / dizi.length;
 	}
+	
+	public static int enYuksekNot(ogrenci[] dizi) //en yuksek notlu ogrencinin bulundugu indexi dondurur.
+	{
+		int enYuksekNotluIndex = 0;
+		double indextekiNot = 0;
+		for(int i = 0 ; i < dizi.length ; i++)
+		{
+			if(dizi[i].not >indextekiNot)
+			{
+				indextekiNot = dizi[i].not;
+				enYuksekNotluIndex = i;
+			}
+		}
+		return enYuksekNotluIndex;
+	}
 
 	public static void main(String[] args) {
 
@@ -51,7 +66,7 @@ public class java_two {
 			System.out.printf("%s ,lutfen notunu gireceginiz ogrencinin ismini giriniz = \n",isim);
 			ogrencio.isim = okuyucu.nextLine();
 			System.out.println("isim ekleme islemi basarili!!");
-			System.out.printf("%s ,%s. isimli ogrencinin notunu giriniz = \n",isim,ogrencio.isim);
+			System.out.printf("%s ,%s isimli ogrencinin notunu giriniz = \n",isim,ogrencio.isim);
 			while(true)
 			{
 				ogrencio.not = intDegerAlanaKadarGirdiAlma(okuyucu);
@@ -68,6 +83,8 @@ public class java_two {
 		}
 		
 		System.out.printf("%s ,girilen notlarin ortalamasi = %.2f\n",isim,ortalamaHesaplama(notlar));
+		
+		System.out.printf("%s ,girmis oldugunuz ogrenciler arasindan \nEn yuksek notu alan ogerenci = %s\nAldigi not = %d\n",isim ,notlar[enYuksekNot(notlar)].isim ,notlar[enYuksekNot(notlar)].not);
 		
 		okuyucu.close();
 		
