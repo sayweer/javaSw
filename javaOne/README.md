@@ -1,2 +1,0 @@
-# javaSw
-nesneye yönelik programlama
