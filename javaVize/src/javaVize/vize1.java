@@ -3,26 +3,21 @@ import java.util.*;
 import javax.swing.*;
 
 public class vize1 {
-	public static String isimAlma()
+	public static String isimAlma(Scanner okuyucu)
 	{
-		Scanner okuyucu = new Scanner(System.in);
 		System.out.println("lutfen isminizi giriniz : ");
 		String isim = okuyucu.nextLine();
-		okuyucu.close();
 		return isim;
 	}
 	
-	public static int yasAlma()
+	public static int yasAlma(Scanner okuyucu)
 	{
-		Scanner okuyucu = new Scanner(System.in);
 		int yas;
 		while(true)
 		{
 			try {
 				System.out.println("lutfen yasinizi giriniz : ");
-				String sayi = okuyucu.nextLine();
-				yas = Integer.parseInt(sayi);
-				okuyucu.close();
+				yas = Integer.parseInt(okuyucu.nextLine());
 				break;
 			}catch(NumberFormatException e)
 			{
@@ -32,32 +27,29 @@ public class vize1 {
 		return yas;
 	}
 	
-	public static String ePostaAlma()
+	public static String ePostaAlma(Scanner okuyucu)
 	{
-		Scanner okuyucu = new Scanner(System.in);
 		System.out.println("lutfen e posta bilginizi tuslayiniz : ");
 		String ePosta = okuyucu.nextLine();
-		okuyucu.close();
 		return ePosta;
 	}
 	
-	public static String kategoriGirisi()
+	public static String kategoriGirisi(Scanner okuyucu)
 	{
-		Scanner okuyucu = new Scanner(System.in);
 		System.out.println("lutfen katılmak istediginiz kategoriyi(MOBİL ,WEB ,OYUN ,VB.) giriniz : ");
 		String kategori = okuyucu.nextLine();
-		okuyucu.close();
 		return kategori;
 	}
 
 	public static void main(String[] args) {
-		String isim = isimAlma();
-		int yas = yasAlma();
-		String ePosta = ePostaAlma();
-		String kategori = kategoriGirisi();
+		Scanner okuyucu = new Scanner(System.in);
+		String isim = isimAlma(okuyucu);
+		int yas = yasAlma(okuyucu);
+		String ePosta = ePostaAlma(okuyucu);
+		String kategori = kategoriGirisi(okuyucu);
 		
 		StringBuilder bilgiler = new StringBuilder();
-		bilgiler.append("isminiz = ").append(isim).append("\nyasiniz = ").append(yas).append("\n e Postaniz = ").append(ePosta).append("\ngirdiginiz kategori = ").append(kategori);
+		bilgiler.append("isminiz = ").append(isim).append("\nyasiniz = ").append(yas).append("\ne Postaniz = ").append(ePosta).append("\ngirdiginiz kategori = ").append(kategori);
 		
 		System.out.println(bilgiler.toString().trim());
 		
