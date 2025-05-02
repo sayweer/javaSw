@@ -72,5 +72,32 @@ public class vize1 {
 		
 		System.out.println(bilgiler.toString().trim());
 		
+		String[][] takimOyunculariVePuanlari = {{isim,""},{"ahmet",""}, {"mehmet" ,""}};
+		
+		int[] notlar = new int[3];
+		for(int i = 0 ; i < takimOyunculariVePuanlari.length ; i++)
+		{
+ 			notlar[i] = (int)(Math.random()*101);
+		}
+		
+		for(int i = 0 ; i < takimOyunculariVePuanlari.length ; i++)
+		{
+			takimOyunculariVePuanlari[i][1] = String.valueOf(notlar[i]);
+		}
+		
+		for(int i = 0 ; i < takimOyunculariVePuanlari.length ; i ++)
+		{
+			System.out.printf("%s' in notu = %s\n",takimOyunculariVePuanlari[i][0],takimOyunculariVePuanlari[i][1]);
+		}
+		
+		for (int i = 0 ; i < takimOyunculariVePuanlari.length ; i++)
+		{
+			String oyuncuIsim = takimOyunculariVePuanlari[i][0];
+			int oyuncuNot = Integer.parseInt(takimOyunculariVePuanlari[i][1]);
+			String durum = (oyuncuNot >= 65) ? "Basarili" : "Gelistirilmeli";
+			
+			System.out.printf("%s ------  %d  -------  %s\n",oyuncuIsim ,oyuncuNot ,durum);
+		}
+		
 	}
 }
