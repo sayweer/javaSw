@@ -2,6 +2,26 @@ package javaThree;
 import java.util.*;
 import javax.swing.*;
 public class java_three {
+	
+	
+	public static String metinDuzenle(String metin)
+	{
+		String[] kelimeler = metin.split(" ");
+		
+		StringBuilder duzenlenmisMetin = new StringBuilder();
+		
+		for(String kelime:kelimeler)
+		{
+			if(!kelime.isEmpty())
+			{
+				duzenlenmisMetin.append(Character.toUpperCase(kelime.charAt(0)))
+				.append(kelime.substring(1).toLowerCase())
+				.append(" ");
+			}
+		}
+		return duzenlenmisMetin.toString().trim();
+		
+	}
 
 	public static void main(String[] args) {
 		
@@ -11,21 +31,7 @@ public class java_three {
 		//metin = okuyucu.nextLine();
 		metin = JOptionPane.showInputDialog("duzeltmek istediginiz dosyayi giriniz ");
 		
-		
-		String[] kelimeler = metin.split(" ");
-		StringBuilder duzenliMetin = new StringBuilder();
-		
-		for(String kelime:kelimeler)
-		{
-			if(!kelime.isEmpty())
-			{
-				duzenliMetin.append(Character.toUpperCase(kelime.charAt(0)))
-				.append(kelime.substring(1).toLowerCase())
-				.append(" ");
-			}
-		}
-		
-		JOptionPane.showMessageDialog(null, duzenliMetin.toString().trim());
+		JOptionPane.showMessageDialog(null ,metinDuzenle(metin));
 		//System.out.println(duzenliMetin.toString().trim());
 		okuyucu.close();
 	}
