@@ -36,10 +36,37 @@ public class vize1 {
 	
 	public static String kategoriGirisi(Scanner okuyucu)
 	{
-		System.out.println("lutfen katılmak istediginiz kategoriyi(MOBİL ,WEB ,OYUN ,VB.) giriniz : ");
-		String kategori = okuyucu.nextLine();
-		return kategori;
+		String kategori;
+		while(true)
+		{
+			System.out.println("lutfen katılmak istediginiz kategoriyi(MOBİL ,WEB ,OYUN ) giriniz : ");
+			kategori = okuyucu.nextLine();
+			
+			switch(kategori) {
+			case "MOBİL":
+			case "Mobil":
+			case "mobil":
+			case "WEB":
+			case "Web":
+			case "web":
+			case "oyun":
+			case "Oyun":
+			case "OYUN":
+			{
+				break;
+			}
+				
+				
+			default:
+			{
+				System.out.println("bulunmayan bir kategoriyi tusladiniz tekrar denemeniz icin sizi yonlendiriyorum!!!");
+			}
+				
+		}
+			
 	}
+		return kategori;
+}
 
 	public static void main(String[] args) {
 		Scanner okuyucu = new Scanner(System.in);
