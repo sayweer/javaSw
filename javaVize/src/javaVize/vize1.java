@@ -42,30 +42,22 @@ public class vize1 {
 			System.out.println("lutfen katılmak istediginiz kategoriyi(MOBİL ,WEB ,OYUN ) giriniz : ");
 			kategori = okuyucu.nextLine();
 			
-			switch(kategori) {
-			case "MOBİL":
-			case "Mobil":
+			switch(kategori.toLowerCase()) {
 			case "mobil":
-			case "WEB":
-			case "Web":
 			case "web":
 			case "oyun":
-			case "Oyun":
-			case "OYUN":
 			{
-				break;
+				return kategori;
 			}
-				
-				
 			default:
 			{
 				System.out.println("bulunmayan bir kategoriyi tusladiniz tekrar denemeniz icin sizi yonlendiriyorum!!!");
 			}
+			break;
 				
 		}
 			
 	}
-		return kategori;
 }
 
 	public static void main(String[] args) {
