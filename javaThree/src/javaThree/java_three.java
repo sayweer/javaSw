@@ -1,13 +1,16 @@
 package javaThree;
 import java.util.*;
+import javax.swing.*;
 public class java_three {
 
 	public static void main(String[] args) {
 		
 		Scanner okuyucu = new Scanner(System.in);
 		String metin;
-		System.out.println("duzeltmek istediginiz metni giriniz = ");
-		metin = okuyucu.nextLine();
+		//System.out.println("duzeltmek istediginiz metni giriniz = ");
+		//metin = okuyucu.nextLine();
+		metin = JOptionPane.showInputDialog("duzeltmek istediginiz dosyayi giriniz ");
+		
 		
 		String[] kelimeler = metin.split(" ");
 		StringBuilder duzenliMetin = new StringBuilder();
@@ -21,7 +24,9 @@ public class java_three {
 				.append(" ");
 			}
 		}
-		System.out.println(duzenliMetin.toString().trim());
+		
+		JOptionPane.showMessageDialog(null, duzenliMetin.toString().trim());
+		//System.out.println(duzenliMetin.toString().trim());
 		okuyucu.close();
 	}
 
